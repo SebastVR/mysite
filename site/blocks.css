@@ -1,0 +1,60 @@
+/* This is a partial blocks.css, you need to add more rules
+   to this file to complete the assignment.  Do not add any CSS
+   styling to the original index.htm / start.htm */
+
+   body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    font-size: x-large;
+    margin: 20px;
+}
+
+.boxed {
+    width: 300px;
+    border: 4px solid;
+    margin: 20px;
+}
+
+/* Here is one of many  CSS rules you will need... */
+#one {
+    position:absolute;
+    border-color: blue;
+    top: 0px;
+    left: 0px;
+}
+
+#two {
+    position:absolute;
+    border-color: red;
+    top: 0px;
+    right: 0px;
+}
+
+#three {
+    position:absolute;
+    border-color: green;
+    bottom: 0px;
+    left: 0px;
+}
+
+#four {
+    position:absolute;
+    border-color: cyan;
+    bottom: 0px;
+    right: 0px;
+}
+
+#link {
+    
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
+
+a {
+    color: white;
+    background-color: blue;
+    padding: 10px;
+}
