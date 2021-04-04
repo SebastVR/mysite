@@ -28,7 +28,7 @@ from django.urls import include, path
 from django.conf.urls import url
 from django.views.static import serve
 from django.views.generic import TemplateView
-from hello import views
+#from hello import views
 # Up two folders to serve "site" content
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_ROOT = os.path.join(BASE_DIR, 'site')
@@ -41,6 +41,4 @@ urlpatterns = [
         name='site_path'
     ), 
     path('', TemplateView.as_view(template_name='home/main.html')),
-    path('cookie', views.cookie),
-    path('hello/', views.sessfun),
 ]
