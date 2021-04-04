@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.views import generic
 
 def owner(request):
-    return HttpResponse("Hello, world. 2d0d322f is the polls owner.")
+    return HttpResponse("Hello, world. 0d730fb2 is the polls owner.")
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
