@@ -1,5 +1,4 @@
 """mysite URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
 Examples:
@@ -17,7 +16,6 @@ Including another URLconf
 # week2
 """from django.contrib import admin
 from django.urls import include, path
-
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
@@ -29,7 +27,8 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls import url
 from django.views.static import serve
-
+from django.views.generic import TemplateView
+from hello import views
 # Up two folders to serve "site" content
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_ROOT = os.path.join(BASE_DIR, 'site')
@@ -40,5 +39,8 @@ urlpatterns = [
     url(r'^site/(?P<path>.*)$', serve,
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
-    ),
+    ), 
+    path('', TemplateView.as_view(template_name='home/main.html')),
+    path('cookie', views.cookie),
+    path('hello/', views.sessfun),
 ]
