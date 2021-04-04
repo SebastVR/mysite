@@ -28,3 +28,6 @@ def sessfun(request) :
     resp = HttpResponse('view count='+str(num_visits))
     resp.set_cookie('dj4e_cookie', '0d730fb2', max_age=1000)
     return resp
+
+
+    
