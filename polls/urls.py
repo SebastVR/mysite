@@ -1,8 +1,9 @@
 from django.urls import path
-
+from django.views.generic import TemplateView
 from polls import views
 
 app_name = 'polls'
+
 urlpatterns = [
     # ex: /polls/
     path('', views.IndexView.as_view(), name='index'),
@@ -13,5 +14,6 @@ urlpatterns = [
     # ex: /polls/5/vote/
     path('<int:question_id>/vote/', views.vote, name='vote'),
     path('owner', views.owner, name='owner'),
+    
 ]
 
