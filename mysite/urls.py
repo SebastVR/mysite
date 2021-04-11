@@ -30,7 +30,6 @@ from django.views.static import serve
 from django.views.generic import TemplateView
 
 from hello import views
-#from autos import views
 
 # Up two folders to serve "site" content
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -46,6 +45,8 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home/main.html')),
     path('cookie', views.cookie),
     path('hello/', views.sessfun),
+    #path('', include('home.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('autos/', include('autos.urls')),   
+    path('cats/', include('cats.urls')),
 ]
