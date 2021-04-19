@@ -42,7 +42,6 @@ urlpatterns = [
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
     ), 
-    url(r'^oauth/', include('social_django.urls', namespace='social')),
     path('', TemplateView.as_view(template_name='home/main.html')),
     path('cookie', views.cookie),
     path('hello/', views.sessfun),
