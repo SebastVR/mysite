@@ -54,7 +54,7 @@ urlpatterns = [
 ]
 
 # Serve the favicon - Keep for later
-urlpatterns += [
+'''urlpatterns += [
     path('favicon.ico', serve, {
             'path': 'favicon.ico',
             'document_root': os.path.join(BASE_DIR, 'home/static'),
@@ -71,5 +71,5 @@ try:
                        )
     print('Using', social_login, 'as the login template')
 except:
-    print('Using registration/login.html as the login template')
+    print('Using registration/login.html as the login template')'''
 
