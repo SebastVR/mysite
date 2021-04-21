@@ -51,7 +51,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('autos/', include('autos.urls')),   
     path('cats/', include('cats.urls')),
-    path('ads/', include('cats.urls')),
+
 ]
 
 # Serve the favicon - Keep for later
