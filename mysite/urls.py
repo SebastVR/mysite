@@ -44,7 +44,7 @@ urlpatterns = [
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
     ),
-    #url(r'^oauth/', include('social_django.urls', namespace='social')), 
+    url(r'^oauth/', include('social_django.urls', namespace='social')), 
     path('', TemplateView.as_view(template_name='home/main.html')),
     path('cookie', views.cookie),
     path('hello/', views.sessfun),
@@ -56,7 +56,7 @@ urlpatterns = [
 ]
 
 # Serve the favicon - Keep for later
-'''urlpatterns += [
+urlpatterns += [
     path('favicon.ico', serve, {
             'path': 'favicon.ico',
             'document_root': os.path.join(BASE_DIR, 'home/static'),
@@ -73,5 +73,5 @@ try:
                        )
     print('Using', social_login, 'as the login template')
 except:
-    print('Using registration/login.html as the login template')'''
+    print('Using registration/login.html as the login template')
 
