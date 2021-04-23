@@ -26,12 +26,10 @@ import os
 from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls import url
-from django.views.static import serve
 from django.views.generic import TemplateView
 from django.contrib.auth import views as auth_views
 from django.views.static import serve
 from django.conf import settings
-from hello import views
 
 # Up two folders to serve "site" content
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -68,7 +66,7 @@ urlpatterns += [
 
 # Switch to social login if it is configured - Keep for later
 try:
-    from home import github_settings
+    from mysite import github_settings
     social_login = 'registration/login_social.html'
     urlpatterns.insert(0,
                        path('accounts/login/', auth_views.LoginView.as_view(template_name=social_login))

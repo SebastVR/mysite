@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'home',
     'cats',
     'ads',
-    #'social_django',
+    #"'social_django",
     #'crispy_forms',
 ]
 
