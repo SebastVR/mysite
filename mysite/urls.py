@@ -65,7 +65,7 @@ urlpatterns += [
 ]
 
 # Switch to social login if it is configured - Keep for later
-try:
+'''try:
     from mysite import github_settings
     social_login = 'registration/login_social.html'
     urlpatterns.insert(0,
@@ -73,5 +73,5 @@ try:
                        )
     print('Using', social_login, 'as the login template')
 except:
-    print('Using registration/login.html as the login template')
+    print('Using registration/login.html as the login template')'''
 
