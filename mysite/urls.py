@@ -42,7 +42,7 @@ urlpatterns = [
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
     ),
-    #url(r'^oauth/', include('social_django.urls', namespace='social')), 
+    url(r'^oauth/', include('social_django.urls', namespace='social')), 
     path('', TemplateView.as_view(template_name='home/main.html')),
     path('cookie', views.cookie),
     path('hello/', views.sessfun),
@@ -66,7 +66,7 @@ urlpatterns += [
 
 # Switch to social login if it is configured - Keep for later
 '''try:
-    from mysite import github_settings
+    from . import github_settings
     social_login = 'registration/login_social.html'
     urlpatterns.insert(0,
                        path('accounts/login/', auth_views.LoginView.as_view(template_name=social_login))
