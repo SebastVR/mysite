@@ -31,18 +31,10 @@ from django.contrib.auth import views as auth_views
 from django.views.static import serve
 from django.conf import settings
 from hello import views
+
 # Up two folders to serve "site" content
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-'''urlpatterns += [
-    url(r'^site/(?P<path>.*)$', serve,
-        {'document_root': os.path.join(BASE_DIR, 'site'),
-         'show_indexes': True},
-        name='site_path'
-        ),
-]'''
-
 SITE_ROOT = os.path.join(BASE_DIR, 'site')
 
 urlpatterns = [
@@ -52,7 +44,7 @@ urlpatterns = [
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
     ),
-    #url(r'^oauth/', include('social_django.urls', namespace='social')), 
+    url(r'^oauth/', include('social_django.urls', namespace='social')), 
     path('', TemplateView.as_view(template_name='home/main.html')),
     path('cookie', views.cookie),
     path('hello/', views.sessfun),
