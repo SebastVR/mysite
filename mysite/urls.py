@@ -32,7 +32,17 @@ from django.views.static import serve
 from django.conf import settings
 from hello import views
 # Up two folders to serve "site" content
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+'''urlpatterns += [
+    url(r'^site/(?P<path>.*)$', serve,
+        {'document_root': os.path.join(BASE_DIR, 'site'),
+         'show_indexes': True},
+        name='site_path'
+        ),
+]'''
+
 SITE_ROOT = os.path.join(BASE_DIR, 'site')
 
 urlpatterns = [
@@ -42,7 +52,7 @@ urlpatterns = [
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
     ),
-    #url(r'^oauth/', include('social_django.urls', namespace='social')), 
+    url(r'^oauth/', include('social_django.urls', namespace='social')), 
     path('', TemplateView.as_view(template_name='home/main.html')),
     path('cookie', views.cookie),
     path('hello/', views.sessfun),
@@ -55,6 +65,7 @@ urlpatterns = [
 ]
 
 
+
 # Serve the favicon - Keep for later
 urlpatterns += [
     path('favicon.ico', serve, {
@@ -65,7 +76,7 @@ urlpatterns += [
 ]
 
 # Switch to social login if it is configured - Keep for later
-'''try:
+try:
     from . import github_settings
     social_login = 'registration/login_social.html'
     urlpatterns.insert(0,
@@ -73,5 +84,5 @@ urlpatterns += [
                        )
     print('Using', social_login, 'as the login template')
 except:
-    print('Using registration/login.html as the login template')'''
+    print('Using registration/login.html as the login template')
 
