@@ -30,6 +30,9 @@ from django.views.generic import TemplateView
 from django.contrib.auth import views as auth_views
 from django.views.static import serve
 from django.conf import settings
+from django.contrib.auth.forms import UserCreationForm
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, ButtonHolder, Submit
 from hello import views
 
 # Up two folders to serve "site" content
@@ -59,7 +62,7 @@ urlpatterns = [
 
 
 # Serve the favicon - Keep for later
-'''urlpatterns += [
+urlpatterns += [
     path('favicon.ico', serve, {
             'path': 'favicon.ico',
             'document_root': os.path.join(BASE_DIR, 'home/static'),
@@ -76,5 +79,5 @@ try:
                        )
     print('Using', social_login, 'as the login template')
 except:
-    print('Using registration/login.html as the login template')'''
+    print('Using registration/login.html as the login template')
 

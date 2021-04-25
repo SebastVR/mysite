@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'cats',
     'ads',
     #"social_django",
-    #'crispy_forms',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
