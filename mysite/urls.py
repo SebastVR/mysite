@@ -1,6 +1,7 @@
-"""mysite URL Configuration
+"""samples URL Configuration
+
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
+    https://docs.djangoproject.com/en/3.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -12,52 +13,31 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
-# week2
-"""from django.contrib import admin
-from django.urls import include, path
-urlpatterns = [
-    path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls),
-]"""
-
-# week3
 import os
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path, include
+from django.conf import settings
 from django.conf.urls import url
-from django.views.generic import TemplateView
 from django.contrib.auth import views as auth_views
 from django.views.static import serve
-from django.conf import settings
-
-from hello import views
-
-# Up two folders to serve "site" content
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE_ROOT = os.path.join(BASE_DIR, 'site')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('polls/', include('polls.urls')),                                                                                           
-    url(r'^site/(?P<path>.*)$', serve,
-        {'document_root': SITE_ROOT, 'show_indexes': True},
-        name='site_path'
-    ),
-    #url(r'^oauth/', include('social_django.urls', namespace='social')), 
-    path('', TemplateView.as_view(template_name='home/main.html')),
-    path('cookie', views.cookie),
-    path('hello/', views.sessfun),
-    path('', include('home.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('autos/', include('autos.urls')),   
-    path('cats/', include('cats.urls')),
-    path('ads/', include('ads.urls')),
+    path('', include('home.urls')),  # Change to ads.urls
+    path('admin/', admin.site.urls),  # Keep
+    path('accounts/', include('django.contrib.auth.urls')),  # Keep
+    url(r'^oauth/', include('social_django.urls', namespace='social')),  # Keep
 
 ]
 
-
+# Serve the static HTML
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+urlpatterns += [
+    url(r'^site/(?P<path>.*)$', serve,
+        {'document_root': os.path.join(BASE_DIR, 'site'),
+         'show_indexes': True},
+        name='site_path'
+        ),
+]
 
 # Serve the favicon - Keep for later
 urlpatterns += [
@@ -79,3 +59,6 @@ try:
 except:
     print('Using registration/login.html as the login template')
 
+# References
+
+# https://docs.djangoproject.com/en/3.0/ref/urls/#include
