@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+#Server error
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # Application definition
 
