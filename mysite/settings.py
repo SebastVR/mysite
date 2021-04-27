@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'djangobin',
+    #'djangobin', #27/4/2021
+    'copycat.apps.CopycatConfig',
 
     # Extensions - installed with pip3 / requirements.txt
     'django_extensions', 
