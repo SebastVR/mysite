@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     #'djangobin', #27/4/2021
-    'copycat.apps.CopycatConfig',
+    #'copycat.apps.CopycatConfig',
 
     # Extensions - installed with pip3 / requirements.txt
     'django_extensions', 
