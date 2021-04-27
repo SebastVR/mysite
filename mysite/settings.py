@@ -33,6 +33,8 @@ ALLOWED_HOSTS = ['*']
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # Application definition
 
+#SOCIAL_AUTH_STORAGE = 'social_django_mongoengine.models.DjangoStorage'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
     'crispy_forms',  
     'rest_framework', 
     'social_django',  
+    #'social_django_mongoengine', ####
     'taggit',
     'home.apps.HomeConfig', 
     'ads'
@@ -178,7 +181,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',
     # 'social_core.backends.twitter.TwitterOAuth',
     # 'social_core.backends.facebook.FacebookOAuth2',
-
+    
     'django.contrib.auth.backends.ModelBackend',
 )
 
