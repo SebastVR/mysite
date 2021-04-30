@@ -9,15 +9,15 @@ https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
 
 
 #### Code for local ###
-"""import os
+import os
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 
-application = get_wsgi_application()"""
+application = get_wsgi_application()
 
 ### Code for server ###
-import os
+'''import os
 import sys
 
 path = os.path.expanduser('~/mysite')
@@ -26,6 +26,6 @@ if path not in sys.path:
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
 from django.core.wsgi import get_wsgi_application
 from django.contrib.staticfiles.handlers import StaticFilesHandler
-application = StaticFilesHandler(get_wsgi_application())
+application = StaticFilesHandler(get_wsgi_application())'''
 
 
