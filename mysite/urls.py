@@ -25,7 +25,7 @@ urlpatterns = [
     path('', include('home.urls')),  # Change to ads.urls
     path('admin/', admin.site.urls),  # Keep
     path('accounts/', include('django.contrib.auth.urls')),  # Keep
-    url(r'^oauth/', include('social_django.urls', namespace='social')),  # Keep
+    #url(r'^oauth/', include('social_django.urls', namespace='social')),  # Keep
     path('ads/', include('ads.urls')),
     #url(r'^login/$', auth_views.login, name='login'),#26/4/2021
     #url(r'^logout/$', auth_views.logout, name='logout'),#26/4/2021
