@@ -30,7 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 #Server error
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+#DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # Application definition
 
 #SOCIAL_AUTH_STORAGE = 'social_django_mongoengine.models.DjangoStorage'
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'social_django',  
     'taggit',
     'home.apps.HomeConfig', 
-    'ads'
+    'ads',
 ]
 
 # When we get to crispy forms :)
