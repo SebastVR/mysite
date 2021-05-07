@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Used for a default title
-APP_NAME = 'ChucksList'   # Add
+APP_NAME = 'SVRList'   # Add
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
  
     # Extensions - installed with pip3 / requirements.txt
-    'django_extensions', 
+    #'django_extensions', 
     'crispy_forms',  
     'rest_framework', 
     'social_django',  
@@ -99,14 +99,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}'''
+}
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Sebastianvr$default',
@@ -117,7 +117,7 @@ DATABASES = {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
-}
+}'''
 
 
 # Password validation
