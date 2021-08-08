@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 from django.views.static import serve
+from django.urls import path, include
 
 urlpatterns = [
     path('', include('home.urls')),  # Change to ads.urls
@@ -27,6 +28,10 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),  # Keep
     url(r'^oauth/', include('social_django.urls', namespace='social')),  # Keep
     path('ads/', include('ads.urls')),
+    path('polls/', include('polls.urls', namespace='polls')),
+    path('autos/', include('autos.urls')),
+
+    
 ]
 
 # Serve the static HTML

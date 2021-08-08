@@ -1,0 +1,53 @@
+Building Your Application
+
+1. mkdir django_projects                        #Create folder of the project
+2. cd django_projects                           #Access the folder
+3. django-admin startproject mysite             #Create project 
+4. cd mysite                                    #Access the folder the project
+5. python3 manage.py startapp polls             #Add Application
+6. python3 manage.py createsuperuser            #Create username
+
+4. python3 manage.py makemigrations             #Evalue change
+5. python3 manage.py migrate                    #Run change
+
+6. python3 manage.py shell                      #Open terminal whit access to the project models
+
+cat view contents
+
+
+##### Docker #####
+sudo docker-compose up djangoapi
+sudo docker-compose exec djangoapi python manage.py ....
+##### End Docker #####
+
+
+##### Create a table sqlite3 #####
+$ cd ~
+$ sqlite3 pitch.sqlite3
+SQLite version 3.24.0 2018-06-04 14:10:15
+Enter ".help" for usage hints.
+sqlite>
+
+sqlite> .help
+sqlite> .tables                                              #Show name of the table
+sqlite> .schema Ages                                         #Show name of the schema
+sqlite> SELECT * FROM Ages;                                  #Show name of the values
+sqlite> DELETE FROM Ages WHERE age>27;                       #Delete the values 
+sqlite> UPDATE Ages SET name "Sebastian" WHERE age=27;       #Repalce el INTO agree the VALUES
+sqlite> SELECT hex(name || age) AS X FROM Ages ORDER BY X;
+sqlite> .quit                                                #Quit the sql
+
+sqlite>CREATE TABLE Ages (                                      
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+  name VARCHAR(128), 
+  age INTEGER
+);
+
+sqlite>DELETE FROM Ages;
+INSERT INTO Ages (name, age) VALUES ('Nuala', 34);
+INSERT INTO Ages (name, age) VALUES ('Peni', 27);
+INSERT INTO Ages (name, age) VALUES ('Marlee', 22);
+INSERT INTO Ages (name, age) VALUES ('Likiesha', 27);
+
+##### End sqlite #####
+
