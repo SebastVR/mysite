@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "polls",
     "autos",
     "home",
+    "cats.apps.CatsConfig",
 ]
 
 # When we get to crispy forms :)

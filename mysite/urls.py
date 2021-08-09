@@ -24,13 +24,14 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    # path("home/", include("home.urls")),  # Change to ads.urls
+    path("home/", include("home.urls")),  # Change to ads.urls
     path("admin/", admin.site.urls),  # Keep
     path("accounts/", include("django.contrib.auth.urls")),  # Keep
     url(r"^oauth/", include("social_django.urls", namespace="social")),  # Keep
     path("ads/", include("ads.urls")),
     path("polls/", include("polls.urls", namespace="polls")),
     path("autos/", include("autos.urls")),
+    path("cats/", include("cats.urls")),
     path("", TemplateView.as_view(template_name="home/main.html")),
     path("hello/", include("hello.urls")),
 ]
