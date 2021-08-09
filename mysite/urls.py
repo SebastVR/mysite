@@ -21,16 +21,17 @@ from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 from django.views.static import serve
 from django.urls import path, include
-
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    path("", include("home.urls")),  # Change to ads.urls
+    # path("home/", include("home.urls")),  # Change to ads.urls
     path("admin/", admin.site.urls),  # Keep
     path("accounts/", include("django.contrib.auth.urls")),  # Keep
     url(r"^oauth/", include("social_django.urls", namespace="social")),  # Keep
     path("ads/", include("ads.urls")),
     path("polls/", include("polls.urls", namespace="polls")),
     path("autos/", include("autos.urls")),
+    path("", TemplateView.as_view(template_name="home/main.html")),
 ]
 
 # Serve the static HTML

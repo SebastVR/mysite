@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     "rest_framework",
     "social_django",
     "taggit",
-    "home.apps.HomeConfig",
+    # "home.apps.HomeConfig",
     "ads",
     "polls",
     "autos",
-    "hello",
+    "home",
 ]
 
 # When we get to crispy forms :)
