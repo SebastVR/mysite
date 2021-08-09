@@ -17,9 +17,10 @@ from django.urls import path
 from hello import views
 from django.views.generic import TemplateView
 
-# app_name = "polls"
+app_name = "hello"
 
 urlpatterns = [
     path("cookie", views.cookie),
     path("", views.sessfun),
+    path("sessfum", views.sessfun),
 ]
