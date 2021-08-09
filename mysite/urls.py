@@ -32,6 +32,7 @@ urlpatterns = [
     path("polls/", include("polls.urls", namespace="polls")),
     path("autos/", include("autos.urls")),
     path("", TemplateView.as_view(template_name="home/main.html")),
+    path("hello/", include("hello.urls")),
 ]
 
 # Serve the static HTML
