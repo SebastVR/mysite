@@ -33,7 +33,7 @@ def sessfun(request):
     return resp
 
 
-from django.http import HttpResponse
+''' from django.http import HttpResponse
 import logging
 
 logger = logging.getLogger(__name__)
@@ -49,4 +49,4 @@ def helloworld(request):
     <a href="https://github.com/csev/dj4e-samples">
     https://github.com/csev/dj4e-samples</a></p>
     </body></html>"""
-    return HttpResponse(response)
+    return HttpResponse(response) '''
