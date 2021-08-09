@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     "ads",
     "polls",
     "autos",
-    "home",
+    # "home",
 ]
 
 # When we get to crispy forms :)
