@@ -30,8 +30,7 @@ urlpatterns = [
     path('ads/', include('ads.urls')),
     path('polls/', include('polls.urls', namespace='polls')),
     path('autos/', include('autos.urls')),
-    path('', TemplateView.as_view(template_name='home/main.html')),
-    
+    path('', TemplateView.as_view(template_name='home/main.html')), 
 ]
 
 # Serve the static HTML
