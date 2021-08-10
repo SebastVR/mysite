@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Used for a default title
-APP_NAME = "SVRList"  # Add
+APP_NAME = "ChucksList"  # Add
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -29,11 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-# Server error
-DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 # Application definition
-
-# SOCIAL_AUTH_STORAGE = 'social_django_mongoengine.models.DjangoStorage'
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -44,19 +40,44 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.humanize",
     # Extensions - installed with pip3 / requirements.txt
-    #'django_extensions',
+    "django_extensions",
     "crispy_forms",
     "rest_framework",
     "social_django",
     "taggit",
-    # "home.apps.HomeConfig",
-    "ads",
-    "polls",
-    "autos",
-    "home",
-    "cats.apps.CatsConfig",
+    "home.apps.HomeConfig",
+    # Sample Applications - don't copy
 ]
 
+"""hello.apps.HelloConfig",
+    'users.apps.UsersConfig',
+    'bookone.apps.BookoneConfig',
+    'bookmany.apps.BookmanyConfig',
+    'tracks.apps.TracksConfig',
+    'views.apps.ViewsConfig',
+    'tmpl.apps.TmplConfig',
+    'gview.apps.GviewConfig',
+    'route.apps.RouteConfig',
+    'session.apps.SessionConfig',
+    'authz.apps.AuthzConfig',
+    'getpost.apps.GetpostConfig',
+    'form.apps.FormConfig',
+    'many.apps.ManyConfig',
+    'myarts.apps.MyartsConfig',
+    'menu.apps.MenuConfig',
+    'forums.apps.ForumsConfig',
+    'crispy.apps.CrispyConfig',
+    'pics.apps.PicsConfig',
+    'rest.apps.RestConfig',
+    'favs.apps.FavsConfig',
+    'favsql.apps.FavsqlConfig',
+    'autos.apps.AutosConfig',
+    'cats.apps.CatsConfig',
+    'usermodel.apps.UsermodelConfig',
+    'chat.apps.ChatConfig',
+    'util.apps.UtilConfig',
+    'well.apps.WellConfig',
+    'tagme.apps.TagmeConfig', """
 # When we get to crispy forms :)
 CRISPY_TEMPLATE_PACK = "bootstrap3"  # Add
 
@@ -101,25 +122,26 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
-}
+} """
 
-"""DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Sebastianvr$default',
-        'USER': 'Sebastianvr',
-        'PASSWORD': 'pythonanywhere',
-        'HOST': 'Sebastianvr.mysql.pythonanywhere-services.com',
-         'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "Sebastianvr$default",
+        "USER": "Sebastianvr",
+        "PASSWORD": "pythonanywhere",
+        "HOST": "Sebastianvr.mysql.pythonanywhere-services.com",
+        "OPTIONS": {
+            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
-}"""
+}
 
 
 # Password validation
@@ -194,6 +216,10 @@ LOGIN_REDIRECT_URL = "/"
 
 # Don't set default LOGIN_URL - let django.contrib.auth set it when it is loaded
 # LOGIN_URL = '/accounts/login'
+
+# Needed for 3.2 and later
+# https://stackoverflow.com/questions/67783120/warning-auto-created-primary-key-used-when-not-defining-a-primary-key-type-by
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # https://coderwall.com/p/uzhyca/quickly-setup-sql-query-logging-django
 # https://stackoverflow.com/questions/12027545/determine-if-django-is-running-under-the-development-server
