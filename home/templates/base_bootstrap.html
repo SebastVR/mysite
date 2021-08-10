@@ -38,22 +38,22 @@
 <meta name="dj4e-version" content="2021-04-14">
 
 {% block head %} {% endblock %}
-
+{% comment %} <nav class = "navbar navbar-default navbar-inverse">
+    <div class = "container-fluid">
+        <div class = "navbar-header">
+           <a class = "navbar-brand" href="/">SVRList</a>
+        </div>
+        <ul class = <"nav navbar-nav navbar-right">
+            <li>
+                <a href = "/">Cancel</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+        {% endcomment %}
 </head>
 <body>
-    <nav class = "navbar navbar-default navbar-inverse">
-        <div class = "container-fluid">
-            <div class = "navbar-header">
-                <a class = "navbar-brand" href="/">SVRList</a>
-            </div>
-            <ul class = <"nav navbar-nav navbar-right">
-                <li>
-                    <a href = "/">Cancel</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-       
+
 <div class="container">
 {% block navbar %} {% endblock %}
 {% block welcome %} {% endblock %}
