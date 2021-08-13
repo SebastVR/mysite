@@ -2,8 +2,7 @@ from ads.models import Ad
 from django.urls import reverse_lazy, reverse
 from ads.forms import CreateForm, CommentForm
 from django.http import HttpResponse
-
-# from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 
 from ads.owner import (
     OwnerListView,
