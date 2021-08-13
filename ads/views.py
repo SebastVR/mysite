@@ -3,6 +3,13 @@ from django.urls import reverse_lazy, reverse
 from ads.forms import CreateForm, CommentForm
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
+from django.views.generic import (
+    CreateView,
+    UpdateView,
+    DeleteView,
+    ListView,
+    DetailView,
+)
 
 
 from ads.owner import (
