@@ -1,7 +1,9 @@
 from ads.models import Ad
 from django.urls import reverse_lazy, reverse
 from ads.forms import CreateForm, CommentForm
-from django.shortcuts import get_object_or_404, render, redirect
+from django.http import HttpResponse
+
+# from django.shortcuts import get_object_or_404, render
 
 from ads.owner import (
     OwnerListView,
@@ -83,13 +85,4 @@ def stream_file(request, pk):
     response["Content-Type"] = ad.content_type
     response["Content-Length"] = len(ad.picture)
     response.write(ad.picture)
-    return response
-
-
-def stream_file(request, pk):
-    pic = get_object_or_404(Pic, id=pk)
-    response = HttpResponse()
-    response["Content-Type"] = pic.content_type
-    response["Content-Length"] = len(pic.picture)
-    response.write(pic.picture)
     return response
