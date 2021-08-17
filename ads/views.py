@@ -1,4 +1,4 @@
-from ads.models import Ad, Comment
+from ads.models import Ad, Comment, Fav
 from django.views import View
 from django.urls import reverse_lazy, reverse
 from ads.forms import CreateForm, CommentForm
