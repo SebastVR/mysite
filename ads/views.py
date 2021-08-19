@@ -5,6 +5,8 @@ from ads.forms import CreateForm, CommentForm
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.humanize.templatetags.humanize import naturaltime
+from django.db.models import Q
 from django.views.generic import (
     CreateView,
     UpdateView,
@@ -28,7 +30,27 @@ class AdListView(OwnerListView):
     template_name = "ads/ad_list.html"
 
     def get(self, request):
-        ad_list = Ad.objects.all()
+        strval = request.GET.get("search", False)
+        if strval:
+            # Simple title-only search
+            # objects = Post.objects.filter(title__contains=strval).select_related().order_by('-updated_at')[:10]
+
+            # Multi-field search
+            query = Q(title__contains=strval)
+            query.add(Q(text__contains=strval), Q.OR)
+            objects = (
+                Ad.objects.filter(query).select_related().order_by("-updated_at")[:10]
+            )
+        else:
+            # try both versions with > 4 posts and watch the queries that happen
+            objects = Ad.objects.all().order_by("-updated_at")[:10]
+            # objects = Post.objects.select_related().all().order_by('-updated_at')[:10]
+
+        # Augment the post_list
+        for obj in objects:
+            obj.natural_updated = naturaltime(obj.updated_at)
+
+        ad_list = objects
         favorites = list()
         if request.user.is_authenticated:
             rows = request.user.favorite_ads.values("id")
