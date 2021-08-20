@@ -17,6 +17,7 @@ class Ad(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     picture = models.BinaryField(null=True, editable=True)
+    tags = models.CharField(max_length=200, null=True)
     content_type = models.CharField(
         max_length=256, null=True, help_text="The MIMEType of the file"
     )
