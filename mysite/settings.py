@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     # Extensions - installed with pip3 / requirements.txt
     "django_extensions",
     "crispy_forms",
-    "rest_framework",
+    "rest_framework",  # djangoapi
     "social_django",
     "taggit",
     "home.apps.HomeConfig",
@@ -189,7 +189,9 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
-    )
+    ),
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
 }
 
 # Configure the social login
