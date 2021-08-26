@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "crispy_forms",
     "rest_framework",  # djangoapi
+    "snippets.apps.SnippetsConfig",
     "social_django",
     "taggit",
     "home.apps.HomeConfig",
