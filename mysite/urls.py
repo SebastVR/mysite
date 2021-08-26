@@ -34,6 +34,7 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),  # Keep
     url(r"^oauth/", include("social_django.urls", namespace="social")),
     path("ads/", include("ads.urls", namespace="ads")),
+    path("", include(router.urls)),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]
 # Keep
