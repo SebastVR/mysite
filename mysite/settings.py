@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "taggit",
     "home.apps.HomeConfig",
     "ads",
+    "costs",
 ]
 
 # Sample Applications - don't copy
