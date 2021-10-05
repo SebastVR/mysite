@@ -39,6 +39,7 @@ urlpatterns = [
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path("", include("snippets.urls")),
     path("costs/", include("costs.urls", namespace="costs")),
+    path("dimar/", include("dimar.urls", namespace="dimar")),
 ]
 # Keep
 # Sample applications

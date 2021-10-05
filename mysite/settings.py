@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "home.apps.HomeConfig",
     "ads",
     "costs",
+    "dimar",
 ]
 
 # Sample Applications - don't copy
