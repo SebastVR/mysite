@@ -40,6 +40,7 @@ urlpatterns = [
     path("", include("snippets.urls")),
     path("costs/", include("costs.urls", namespace="costs")),
     path("dimar/", include("dimar.urls", namespace="dimar")),
+    path("tools/", include("tools.urls", namespace="tools")),
 ]
 # Keep
 # Sample applications

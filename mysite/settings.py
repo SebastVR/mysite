@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "ads",
     "costs",
     "dimar",
+    "tools",
 ]
 
 # Sample Applications - don't copy
