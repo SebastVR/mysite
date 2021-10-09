@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "social_django",
     "taggit",
     "home.apps.HomeConfig",
+    "polls",
     "ads",
     "costs",
     "dimar",
