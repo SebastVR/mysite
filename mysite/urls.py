@@ -41,6 +41,7 @@ urlpatterns = [
     path("costs/", include("costs.urls", namespace="costs")),
     path("dimar/", include("dimar.urls", namespace="dimar")),
     path("tools/", include("tools.urls", namespace="tools")),
+    path("yields/", include("yields.urls", namespace="yields")),
 ]
 # Keep
 # Sample applications
