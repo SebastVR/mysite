@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
+    "formtools",
     # Extensions - installed with pip3 / requirements.txt
     "django_extensions",
     "crispy_forms",
